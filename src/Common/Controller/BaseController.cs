@@ -7,34 +7,32 @@ namespace Common
     using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using FluentValidation;
 
-	[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<T> : ControllerBase where T : BaseEntity
+    public class BaseController<TEntity, TViewModel> : ControllerBase
+        where TEntity : BaseEntity
+        where TViewModel : BaseEntityViewModel
     {
-        private readonly IBaseUnitOfWork<T> _baseUnitOfWork;
+        protected readonly IBaseUnitOfWork<TEntity> _baseUnitOfWork;
+        protected readonly IMapper _mapper;
+        protected readonly IValidator<TViewModel> _validator;
 
-        protected Mapper _mapper;
-
-        public BaseController(IBaseUnitOfWork<T> baseUnitOfWork)
+        public BaseController(IBaseUnitOfWork<TEntity> unitOfWork, IMapper mapper, IValidator<TViewModel> validator)
         {
-            _baseUnitOfWork = baseUnitOfWork;
-
-            var mapperConfiguration = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<BaseEntity, BaseEntityViewModel>().ReverseMap();
-            });
-            _mapper = new Mapper(mapperConfiguration);
+            _baseUnitOfWork = unitOfWork;
+            _mapper = mapper;
+            _validator = validator;
         }
-
         // GET: api/<ProductsController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BaseEntityViewModel>>> Get()
+        public async Task<ActionResult<IEnumerable<TViewModel>>> Get()
         {
 			var entities = await _baseUnitOfWork.ReadAsync();
 			return Ok(entities.Select(e =>
-					_mapper.Map<BaseEntityViewModel>(e)));
+					_mapper.Map<TViewModel>(e)));
         }
 
         // GET api/<ProductsController>/5
@@ -43,11 +41,11 @@ namespace Common
         {
             var entity = await _baseUnitOfWork.ReadByIdAsync(id);
 
-			BaseEntityViewModel viewModel =
-				_mapper.Map<BaseEntityViewModel>(entity);
+			TViewModel viewModel =
+				_mapper.Map<TViewModel>(entity);
 
 			FluentValidation.Results.ValidationResult validationResult = await
-				new BaseValidator<BaseEntityViewModel>().ValidateAsync(viewModel);
+				new BaseValidator<TViewModel>().ValidateAsync(viewModel);
 
             if (!validationResult.IsValid)
                 return BadRequest(new { errors = validationResult.Errors });
@@ -58,19 +56,19 @@ namespace Common
         // POST api/<ProductsController>
 		[Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<ActionResult<BaseEntityViewModel>> Post([FromBody] T entity)
+        public async Task<ActionResult<TViewModel>> Post([FromBody] TEntity entity)
         {
             var ent = await _baseUnitOfWork.CreateAsync(entity);
-            return Created(entity.Id.ToString(), _mapper.Map<BaseEntityViewModel>(ent));
+            return Created(entity.Id.ToString(), _mapper.Map<TViewModel>(ent));
         }
 
         // PUT api/<entitysController>/5
 		[Authorize(Roles = "Admin")]
         [HttpPut]
-        public async Task<ActionResult<BaseEntityViewModel>> Put([FromBody] T entity)
+        public async Task<ActionResult<TViewModel>> Put([FromBody] TEntity entity)
         {
             var ent = await _baseUnitOfWork.UpdateAsync(entity);
-            return Created(entity.Id.ToString(), _mapper.Map<BaseEntityViewModel>(ent));
+            return Created(entity.Id.ToString(), _mapper.Map<TViewModel>(ent));
         }
 
         // DELETE api/<entitysController>/5

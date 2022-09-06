@@ -1,16 +1,18 @@
 ﻿
 namespace Domains.Player
 {
-	using Common;
+    using AutoMapper;
+    using Common;
+    using FluentValidation;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-	[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class PlayersController : BaseController<Player>
+    public class PlayersController : BaseController<Player, PlayerViewModel>
     {
-        public PlayersController(IPlayerUnitOfWork playerUnitOfWork) : base(playerUnitOfWork)
+        public PlayersController(IPlayerUnitOfWork unitOfWork, IMapper mapper, IValidator<PlayerViewModel> validator) : base(unitOfWork, mapper, validator)
         {
         }
     }

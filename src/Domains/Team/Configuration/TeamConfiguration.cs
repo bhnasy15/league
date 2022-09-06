@@ -8,7 +8,6 @@
     {
         public override void Configure(EntityTypeBuilder<Team> builder)
         {
-
         }
     }
 }
