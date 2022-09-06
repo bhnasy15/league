@@ -1,0 +1,15 @@
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Player.deps.json
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Player.dll
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/ref/Player.dll
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Player.pdb
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Common.dll
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Common.pdb
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.csproj.AssemblyReference.cache
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.GeneratedMSBuildEditorConfig.editorconfig
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.AssemblyInfoInputs.cache
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.AssemblyInfo.cs
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.csproj.CoreCompileInputs.cache
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.csproj.CopyComplete
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.dll
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/ref/Player.dll
+/home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.pdb

@@ -1,0 +1,14 @@
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.csproj.AssemblyReference.cache
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.GeneratedMSBuildEditorConfig.editorconfig
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.AssemblyInfoInputs.cache
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.AssemblyInfo.cs
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.csproj.CoreCompileInputs.cache
+/home/yarob/dotnet/league/src/Auth/bin/Debug/net6.0/Auth.deps.json
+/home/yarob/dotnet/league/src/Auth/bin/Debug/net6.0/Auth.runtimeconfig.json
+/home/yarob/dotnet/league/src/Auth/bin/Debug/net6.0/Auth.dll
+/home/yarob/dotnet/league/src/Auth/bin/Debug/net6.0/ref/Auth.dll
+/home/yarob/dotnet/league/src/Auth/bin/Debug/net6.0/Auth.pdb
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.dll
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/ref/Auth.dll
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.pdb
+/home/yarob/dotnet/league/src/Auth/obj/Debug/net6.0/Auth.genruntimeconfig.cache
