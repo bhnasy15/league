@@ -141,217 +141,257 @@ namespace League.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b2e1e05b-e152-4e6b-9fea-a5874e86792d",
+                            Id = "c8a9a1ae-809d-45e2-bcd6-5a2492df41cd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "31e9970c-5070-4f74-a037-d9e6cf6c9bef",
+                            ConcurrencyStamp = "cfac45c7-fb33-4b51-bc14-f30458ba76fc",
                             Email = "user@mail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@MAIL.COM",
                             NormalizedUserName = "USER-NAME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN0DHQN9D1hxacsMi++SlJXovBT9f7zO49jKFPRRtXFXhPqQmLDEJY7pCC8UsGVZOw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEbwZIFcX6/pPSplMrolrkYWnIHjQ74sX6kT2w6PBDVUMKrCBTGVfMPlz1B+j90joA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ce4273d3-c40f-499e-b67a-da03d5b79a48",
+                            SecurityStamp = "90ea6e4b-3eb8-4a2a-9649-4e3078a6553f",
                             TwoFactorEnabled = false,
                             UserName = "User-name"
                         },
                         new
                         {
-                            Id = "a1a6aabf-9f5b-447d-b4ba-377a6fd3843e",
+                            Id = "6056a156-d00d-49b4-89ed-7a20a67d68e8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5573bb84-0143-4f93-9f09-6c12ad7731ca",
+                            ConcurrencyStamp = "c8b25b5b-67f5-43b5-b3a1-51518de077b7",
                             Email = "admin@mail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MAIL.COM",
                             NormalizedUserName = "ADMIN-NAME",
-                            PasswordHash = "AQAAAAEAACcQAAAAECNOsAr6QLR0TsL9PlvUBicowJVyvoGXLDU/1d5dFRoI6pjXMMVrgp9Cy7LjS1MmKg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGktDHwQHsaeibvsPiZXTb/JPOe5Z3SvR5EYXJqZpRaUQNc6YJltyLpuJaEJDz4AJQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8e74b73b-c5b8-4426-aac4-68c542b02a04",
+                            SecurityStamp = "e23b862d-867b-4d39-900b-11331182191e",
                             TwoFactorEnabled = false,
                             UserName = "Admin-name"
                         });
                 });
 
-            modelBuilder.Entity("Domains.Linker.PlayerTeam", b =>
+            modelBuilder.Entity("Domains.Linker.TeamPlayer", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
                     b.Property<Guid>("PlayerId")
                         .HasColumnType("char(36)");
 
                     b.Property<Guid>("TeamId")
                         .HasColumnType("char(36)");
 
-                    b.HasKey("PlayerId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId")
+                        .IsUnique();
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("PlayerTeam");
+                    b.ToTable("TeamPlayer");
 
                     b.HasData(
                         new
                         {
-                            PlayerId = new Guid("79fd9104-fe4d-46ae-9507-e68389ad5496"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("452f6332-7a2e-49d1-9d2c-c95324528712"),
+                            PlayerId = new Guid("a6e67247-9627-4a05-ae3d-c80d4fdfb3f9"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("b1a89664-c109-4794-9d9c-2d50e568141e"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("e089cf98-f99f-409c-879b-fb2bddd2cdbf"),
+                            PlayerId = new Guid("8aa18562-783e-4ab7-91cf-a697cd6dd261"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("ac981e48-32cc-40a0-98d8-87bec08ccc2d"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("62fb97c5-7ebf-463d-a0f5-12f00e75a3ff"),
+                            PlayerId = new Guid("fd483293-3066-4bcf-a474-a820b177ec90"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("61b3f62c-58b5-4009-a1c3-b28304a0ae58"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("ca43ef13-99a4-49d4-be21-5d82bddecb66"),
+                            PlayerId = new Guid("8179e907-6910-4a0c-8183-a3e1f375e269"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("64451079-d569-4da4-bf5e-92a11750a453"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("50ebecc7-e3b3-4db3-a2b7-b5ec29db62d4"),
+                            PlayerId = new Guid("e0c8af6e-9db6-42dd-a7a2-9df247e88b29"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("ac687c89-5191-4ad0-9384-bc80cfbdf492"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("9515e360-7f7f-4e79-9bb8-5ab2a757bb06"),
+                            PlayerId = new Guid("e315a20f-e3bb-432e-bafa-b1fbfcb02c75"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("f8135fd6-0566-4481-b2d3-91a299b926d5"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("89bdffd3-c05a-4694-9228-bbcfbbf2f7b3"),
+                            PlayerId = new Guid("c1b9c28d-6194-4093-8d39-28e44d5a3aac"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("a86e4fa9-26bf-411d-b33f-0eb4dc124560"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("373a4c2c-b4da-47a8-83fe-5020bbc5679a"),
+                            PlayerId = new Guid("7ed4e691-07e5-478a-9396-d0fcba41080f"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("a42a9e6c-53b7-498c-9813-ff446c35b35a"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("f54ca34d-a39c-4cf6-92f6-41d3981e0f56"),
+                            PlayerId = new Guid("febf4050-ff14-4425-a362-69cbff365efb"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("3cbfed23-4f91-4ce1-96bd-3cb852dd1260"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("3d8859a3-a6aa-45b6-9a2f-ad103587faaf"),
+                            PlayerId = new Guid("8aef9d3f-36a3-4bc6-a91a-21bd92448ba3"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("e3ae6962-b5c9-4b8d-9a3a-aaa4eeebb120"),
-                            TeamId = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02")
+                            Id = new Guid("c4d1d8cc-9e2e-4a96-b25a-c1a53922ccc3"),
+                            PlayerId = new Guid("0c4c7ed2-9a42-445e-bae1-6e2c21ea9702"),
+                            TeamId = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26")
                         },
                         new
                         {
-                            PlayerId = new Guid("765b92d4-fc9b-4753-926f-4a0481bf54d6"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("5665be06-d902-40b6-98fc-df8f75514613"),
+                            PlayerId = new Guid("3ad576ef-30da-43d5-8ab9-0cbbe07e48f1"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("9be85e40-fb6e-470e-b1fc-e91dedfce251"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("8a7f1e95-34d8-48aa-95ff-f96638f651a7"),
+                            PlayerId = new Guid("2fcbcec5-a6a3-46dc-aa19-b64ccc57fd97"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("c3552ef3-cf23-4377-88cb-5a36bbbbfef7"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("c004a060-f36b-4cff-92a6-457e8471a505"),
+                            PlayerId = new Guid("14161cc5-fa8a-4b5a-829e-53b39bd5f96f"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("2e5fa678-95ac-48b8-851f-a16d163bd3b7"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("81934ae3-3e60-439d-a617-dcf035bf7216"),
+                            PlayerId = new Guid("f22ccec5-7698-4e4f-9494-071c9a6f080d"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("80bf7cc8-5716-45bb-a2bb-fb9e7529cc82"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("8cafbf3d-02da-4603-8e21-91533497de06"),
+                            PlayerId = new Guid("2061d97e-338f-4fe6-a9f0-e16357169169"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("a19653d8-71dd-470e-b94b-85125522ada8"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("5b2b3d93-6a85-4578-b21e-853984ffbebe"),
+                            PlayerId = new Guid("8bad3297-ce67-400a-8d6d-ab36b7278325"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("52071bdd-d192-4836-974c-8b0e3cfcb439"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("c6a1a80d-3ada-4efb-be43-eab135a8a74b"),
+                            PlayerId = new Guid("0fc02f76-8e9c-4129-a020-117c4d89709b"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("30e4137b-a9ce-4faa-b9d1-c4ceb6891f25"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("adf94636-f003-4476-a6b5-2d9a9d1a7873"),
+                            PlayerId = new Guid("ddf83261-73b7-46d6-8777-ff47e7673be6"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("cf5baa22-2e81-4714-a694-877ae864c37d"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("d2cb3053-9e39-4904-a3fa-455e64b63463"),
+                            PlayerId = new Guid("7319a7f7-d0dd-43ac-a516-1024b0289f4a"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("086d6d6f-d3ff-4e78-abd9-aee1d75a361c"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("319e15ec-5f5c-47dd-aa95-21a4beaf2e15"),
+                            PlayerId = new Guid("61f07810-14fe-46da-a19e-40241fcf003d"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("6b250e60-f315-4610-ba2d-eaed835d0497"),
-                            TeamId = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080")
+                            Id = new Guid("4b124ac3-19b4-4175-8e35-2e10c4ebe420"),
+                            PlayerId = new Guid("9ddfadd1-b48c-44d0-b9dd-69e233d63b68"),
+                            TeamId = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8")
                         },
                         new
                         {
-                            PlayerId = new Guid("db2bf779-aa03-4e8d-a6c9-65e4a9901175"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("25cab676-9cf1-4964-b1eb-6bc9bfb86af3"),
+                            PlayerId = new Guid("8214ad74-9564-4b15-b70b-2dea9d0a262a"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("fa0aed89-3a11-49e4-b94c-c69fc200738a"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("ddd56baa-488c-42bb-99ee-7de2202a8511"),
+                            PlayerId = new Guid("d549823b-07b9-4784-82c5-a051c2f1d283"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("b0c02032-db80-4a25-8fbe-ed108dc21590"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("16b58d92-56af-47c1-9f45-b24044e5fd2b"),
+                            PlayerId = new Guid("b0cab865-8eca-461f-bf24-8353a6c1b15d"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("64a7f7ba-e494-44ed-88b4-f566da496b0b"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("298cc4f4-77e1-4ef6-9a7f-8778c56c70b0"),
+                            PlayerId = new Guid("d3e1a894-dc6c-4116-8efa-39e1ce813e84"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("32f294b4-57e3-4f58-bb10-5a8d9844f68e"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("093e1c3e-fbe7-445f-8b98-63cb64b9dced"),
+                            PlayerId = new Guid("7dec8e20-54af-4500-8262-ed37adb60f4b"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("1d1c1469-79a7-4f33-bf8a-adf71bf8c32b"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("dda43b1e-f19b-48a1-9dc5-bd65f88ac897"),
+                            PlayerId = new Guid("af708704-33f1-4e53-b142-fd4a3cdbe1fc"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("cd67c983-1252-44c9-8005-e28141002d89"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("a974dba1-cf61-4a8f-8984-b45fb1ec80af"),
+                            PlayerId = new Guid("1521f22a-b2e9-41bc-a1e0-89c419945019"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("3ae54e9e-339f-4c42-8728-90c9c7f79c0d"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("2452d543-8671-4336-afd7-6af7a021c729"),
+                            PlayerId = new Guid("056c5015-3562-450b-89ca-491e1baf7002"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("34b1bf97-d1d0-47cd-9b59-1f378aed2f25"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("8a19a891-ca0c-4a95-a0d5-9d3fafc78520"),
+                            PlayerId = new Guid("b57d1442-2389-4bf9-bd3a-5fd4b01a18fa"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("e2aa0675-ae9e-4ecc-ac15-5a5191acf3d0"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("55bf4b7f-4336-430d-9b40-61d5c84ab297"),
+                            PlayerId = new Guid("25790383-4f35-4d9a-bd21-f71d51974e84"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         },
                         new
                         {
-                            PlayerId = new Guid("1b925330-09f7-4742-b41e-d56950b71171"),
-                            TeamId = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5")
+                            Id = new Guid("e2d1155d-f56c-453f-b42c-daf78fbc3c5e"),
+                            PlayerId = new Guid("222e6af2-e6e6-4469-a3e9-93aec0f0cfa7"),
+                            TeamId = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949")
                         });
                 });
 
@@ -386,299 +426,299 @@ namespace League.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("79fd9104-fe4d-46ae-9507-e68389ad5496"),
-                            Name = "Kaya Odonnell",
-                            country = " Kenya",
-                            dob = new DateTime(2015, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 62,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("b1a89664-c109-4794-9d9c-2d50e568141e"),
-                            Name = "Brandon Crawford",
-                            country = " Lesotho",
-                            dob = new DateTime(1996, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 60,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("ac981e48-32cc-40a0-98d8-87bec08ccc2d"),
-                            Name = "Kaya Odonnell",
+                            Id = new Guid("a6e67247-9627-4a05-ae3d-c80d4fdfb3f9"),
+                            Name = "Sierra Shaffer",
                             country = " Burundi",
-                            dob = new DateTime(2019, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 37,
+                            dob = new DateTime(1992, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 78,
                             profileImage = "defausl.jpg"
                         },
                         new
                         {
-                            Id = new Guid("61b3f62c-58b5-4009-a1c3-b28304a0ae58"),
-                            Name = "Madden Henson",
-                            country = " Libya1",
-                            dob = new DateTime(1998, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 82,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("64451079-d569-4da4-bf5e-92a11750a453"),
+                            Id = new Guid("8aa18562-783e-4ab7-91cf-a697cd6dd261"),
                             Name = "Cameron Bell",
-                            country = " Guinea-Bissau",
-                            dob = new DateTime(2006, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 91,
+                            country = " Mauritius",
+                            dob = new DateTime(1998, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 31,
                             profileImage = "defausl.jpg"
                         },
                         new
                         {
-                            Id = new Guid("ac687c89-5191-4ad0-9384-bc80cfbdf492"),
-                            Name = "Donald Frederick",
-                            country = " Tanzania",
-                            dob = new DateTime(2018, 4, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 54,
+                            Id = new Guid("fd483293-3066-4bcf-a474-a820b177ec90"),
+                            Name = "Philip Ramos",
+                            country = " Congo DR2",
+                            dob = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 6,
                             profileImage = "defausl.jpg"
                         },
                         new
                         {
-                            Id = new Guid("f8135fd6-0566-4481-b2d3-91a299b926d5"),
-                            Name = "Geovanni Buck",
-                            country = " Libya1",
-                            dob = new DateTime(2008, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 66,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("a86e4fa9-26bf-411d-b33f-0eb4dc124560"),
-                            Name = "Brandon Crawford",
-                            country = " Eswatini",
-                            dob = new DateTime(1990, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 19,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("a42a9e6c-53b7-498c-9813-ff446c35b35a"),
-                            Name = "Kaiden Young",
-                            country = " Angola",
-                            dob = new DateTime(2027, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 94,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("3cbfed23-4f91-4ce1-96bd-3cb852dd1260"),
-                            Name = "Tara Singh",
-                            country = " Liberia",
-                            dob = new DateTime(2029, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 14,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("e3ae6962-b5c9-4b8d-9a3a-aaa4eeebb120"),
-                            Name = "Nayeli Hoover",
-                            country = " Niger",
-                            dob = new DateTime(2019, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 92,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("765b92d4-fc9b-4753-926f-4a0481bf54d6"),
-                            Name = "Stella Avila",
-                            country = " Libya1",
-                            dob = new DateTime(2001, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 4,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("9be85e40-fb6e-470e-b1fc-e91dedfce251"),
-                            Name = "Urijah Ali",
-                            country = " Sierra Leone",
-                            dob = new DateTime(2020, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 55,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("c3552ef3-cf23-4377-88cb-5a36bbbbfef7"),
-                            Name = "Clay Sexton",
-                            country = " Somalia1",
-                            dob = new DateTime(2018, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 54,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("2e5fa678-95ac-48b8-851f-a16d163bd3b7"),
-                            Name = "Rosa Bentley",
-                            country = " Equatorial Guinea",
-                            dob = new DateTime(1993, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 67,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("80bf7cc8-5716-45bb-a2bb-fb9e7529cc82"),
-                            Name = "Alexis Stuart",
-                            country = " Seychelles",
-                            dob = new DateTime(2013, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 45,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("a19653d8-71dd-470e-b94b-85125522ada8"),
-                            Name = "Elias Cummings",
-                            country = " Réunion3",
-                            dob = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 94,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("52071bdd-d192-4836-974c-8b0e3cfcb439"),
-                            Name = "Cassie Combs",
-                            country = " Comoros1",
-                            dob = new DateTime(1992, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 84,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("30e4137b-a9ce-4faa-b9d1-c4ceb6891f25"),
-                            Name = "Sierra Shaffer",
-                            country = " Eswatini",
-                            dob = new DateTime(2011, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 44,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("cf5baa22-2e81-4714-a694-877ae864c37d"),
-                            Name = "Gerardo Spencer",
-                            country = " South Africa",
-                            dob = new DateTime(2001, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 32,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("086d6d6f-d3ff-4e78-abd9-aee1d75a361c"),
-                            Name = "Taniya Hudson",
-                            country = " Niger",
-                            dob = new DateTime(1998, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 22,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("6b250e60-f315-4610-ba2d-eaed835d0497"),
+                            Id = new Guid("8179e907-6910-4a0c-8183-a3e1f375e269"),
                             Name = "Bradley Campos",
-                            country = " Côte d'Ivoire",
-                            dob = new DateTime(2025, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 56,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("db2bf779-aa03-4e8d-a6c9-65e4a9901175"),
-                            Name = "Mckenna Wallace",
-                            country = " Réunion3",
-                            dob = new DateTime(2000, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 50,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("fa0aed89-3a11-49e4-b94c-c69fc200738a"),
-                            Name = "Kaitlyn Roberson",
-                            country = " Djibouti1",
-                            dob = new DateTime(1991, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 86,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("b0c02032-db80-4a25-8fbe-ed108dc21590"),
-                            Name = "Elias Cummings",
-                            country = " Nigeria",
-                            dob = new DateTime(2001, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 84,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("64a7f7ba-e494-44ed-88b4-f566da496b0b"),
-                            Name = "Mckenna Wallace",
-                            country = " Ghana",
-                            dob = new DateTime(2000, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 65,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("32f294b4-57e3-4f58-bb10-5a8d9844f68e"),
-                            Name = "Norah Torres",
-                            country = " Mauritania1",
-                            dob = new DateTime(2001, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 24,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("1d1c1469-79a7-4f33-bf8a-adf71bf8c32b"),
-                            Name = "Sierra Shaffer",
-                            country = " Eritrea",
-                            dob = new DateTime(2005, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 50,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("cd67c983-1252-44c9-8005-e28141002d89"),
-                            Name = "Cameron Bell",
-                            country = " Malawi",
-                            dob = new DateTime(2000, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 77,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("3ae54e9e-339f-4c42-8728-90c9c7f79c0d"),
-                            Name = "Rachael Rangel",
-                            country = " Malawi",
-                            dob = new DateTime(1997, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 40,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("34b1bf97-d1d0-47cd-9b59-1f378aed2f25"),
-                            Name = "Nadia Boyer",
-                            country = " Cameroon",
-                            dob = new DateTime(1996, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            number = 62,
-                            profileImage = "defausl.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("e2aa0675-ae9e-4ecc-ac15-5a5191acf3d0"),
-                            Name = "Messiah Flores",
-                            country = " Congo",
-                            dob = new DateTime(2028, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            country = " Tunisia1",
+                            dob = new DateTime(2009, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             number = 98,
                             profileImage = "defausl.jpg"
                         },
                         new
                         {
-                            Id = new Guid("1b925330-09f7-4742-b41e-d56950b71171"),
+                            Id = new Guid("e0c8af6e-9db6-42dd-a7a2-9df247e88b29"),
+                            Name = "Nadia Boyer",
+                            country = " Congo",
+                            dob = new DateTime(2011, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 87,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("e315a20f-e3bb-432e-bafa-b1fbfcb02c75"),
+                            Name = "Agustin Arias",
+                            country = " Cape Verde",
+                            dob = new DateTime(2025, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 98,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("c1b9c28d-6194-4093-8d39-28e44d5a3aac"),
+                            Name = "Geovanni Buck",
+                            country = " Liberia",
+                            dob = new DateTime(1991, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 35,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("7ed4e691-07e5-478a-9396-d0fcba41080f"),
+                            Name = "Francis Garrett",
+                            country = " Cameroon",
+                            dob = new DateTime(1993, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 77,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("febf4050-ff14-4425-a362-69cbff365efb"),
                             Name = "Kaitlyn Roberson",
-                            country = " Libya1",
-                            dob = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            country = " Botswana",
+                            dob = new DateTime(1994, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 40,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("8aef9d3f-36a3-4bc6-a91a-21bd92448ba3"),
+                            Name = "Donald Frederick",
+                            country = " Ghana",
+                            dob = new DateTime(2006, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 75,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("0c4c7ed2-9a42-445e-bae1-6e2c21ea9702"),
+                            Name = "America Parrish",
+                            country = " Eritrea",
+                            dob = new DateTime(2024, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             number = 26,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("3ad576ef-30da-43d5-8ab9-0cbbe07e48f1"),
+                            Name = "Francis Garrett",
+                            country = " Angola",
+                            dob = new DateTime(2029, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 98,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("2fcbcec5-a6a3-46dc-aa19-b64ccc57fd97"),
+                            Name = "Rachael Rangel",
+                            country = " South Africa",
+                            dob = new DateTime(2012, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 64,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("14161cc5-fa8a-4b5a-829e-53b39bd5f96f"),
+                            Name = "Sierra Shaffer",
+                            country = " Nigeria",
+                            dob = new DateTime(1993, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 71,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("f22ccec5-7698-4e4f-9494-071c9a6f080d"),
+                            Name = "Elias Cummings",
+                            country = " Nigeria",
+                            dob = new DateTime(2000, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 58,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("2061d97e-338f-4fe6-a9f0-e16357169169"),
+                            Name = "Bradley Campos",
+                            country = " Kenya",
+                            dob = new DateTime(2013, 10, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 10,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("8bad3297-ce67-400a-8d6d-ab36b7278325"),
+                            Name = "Sierra Shaffer",
+                            country = " Equatorial Guinea",
+                            dob = new DateTime(2013, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 19,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("0fc02f76-8e9c-4129-a020-117c4d89709b"),
+                            Name = "Nadia Boyer",
+                            country = " Eswatini",
+                            dob = new DateTime(2010, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 88,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("ddf83261-73b7-46d6-8777-ff47e7673be6"),
+                            Name = "Jenna Phelps",
+                            country = " Djibouti1",
+                            dob = new DateTime(2010, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 11,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("7319a7f7-d0dd-43ac-a516-1024b0289f4a"),
+                            Name = "Donald Frederick",
+                            country = " Libya1",
+                            dob = new DateTime(2015, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 54,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("61f07810-14fe-46da-a19e-40241fcf003d"),
+                            Name = "Genevieve Alvarado",
+                            country = " Mauritania1",
+                            dob = new DateTime(1990, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 38,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("9ddfadd1-b48c-44d0-b9dd-69e233d63b68"),
+                            Name = "Josue Kelly",
+                            country = " Nigeria",
+                            dob = new DateTime(1993, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 85,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("8214ad74-9564-4b15-b70b-2dea9d0a262a"),
+                            Name = "Agustin Arias",
+                            country = " Ghana",
+                            dob = new DateTime(1990, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 32,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("d549823b-07b9-4784-82c5-a051c2f1d283"),
+                            Name = "Rachael Rangel",
+                            country = " Malawi",
+                            dob = new DateTime(1998, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 12,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0cab865-8eca-461f-bf24-8353a6c1b15d"),
+                            Name = "Nadia Boyer",
+                            country = " Gambia",
+                            dob = new DateTime(1997, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 98,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("d3e1a894-dc6c-4116-8efa-39e1ce813e84"),
+                            Name = "Taniya Hudson",
+                            country = " Burkina Faso",
+                            dob = new DateTime(2008, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 80,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("7dec8e20-54af-4500-8262-ed37adb60f4b"),
+                            Name = "Mary Powers",
+                            country = " Seychelles",
+                            dob = new DateTime(2003, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 65,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("af708704-33f1-4e53-b142-fd4a3cdbe1fc"),
+                            Name = "Rachael Rangel",
+                            country = " Liberia",
+                            dob = new DateTime(2016, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 40,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("1521f22a-b2e9-41bc-a1e0-89c419945019"),
+                            Name = "Nadia Boyer",
+                            country = " Niger",
+                            dob = new DateTime(2015, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 54,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("056c5015-3562-450b-89ca-491e1baf7002"),
+                            Name = "Kaitlyn Roberson",
+                            country = " Benin",
+                            dob = new DateTime(2009, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 62,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("b57d1442-2389-4bf9-bd3a-5fd4b01a18fa"),
+                            Name = "Norah Torres",
+                            country = " Malawi",
+                            dob = new DateTime(2018, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 82,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("25790383-4f35-4d9a-bd21-f71d51974e84"),
+                            Name = "Cameron Bell",
+                            country = " Cape Verde",
+                            dob = new DateTime(2013, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 77,
+                            profileImage = "defausl.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("222e6af2-e6e6-4469-a3e9-93aec0f0cfa7"),
+                            Name = "Alexis Stuart",
+                            country = " Nigeria",
+                            dob = new DateTime(2013, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            number = 51,
                             profileImage = "defausl.jpg"
                         });
                 });
@@ -715,29 +755,29 @@ namespace League.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("908e7ba6-c44a-45e8-b7a0-83cd1f772f02"),
-                            Name = "Javion Shaffer",
-                            coatch = "Bradley Campos",
-                            country = " Eswatini",
-                            foundatoinDate = new DateTime(1993, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("4b7bc5b3-3914-47dc-8d83-1de3e437ff26"),
+                            Name = "Kaitlyn Roberson",
+                            coatch = "Amari Riddle",
+                            country = " Ethiopia",
+                            foundatoinDate = new DateTime(2027, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             logo = "default.jpg"
                         },
                         new
                         {
-                            Id = new Guid("ef768f66-8c19-4e7c-8f4b-8fb828658080"),
-                            Name = "Rosa Bentley",
-                            coatch = "Jenna Phelps",
-                            country = " Réunion3",
-                            foundatoinDate = new DateTime(2022, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("c9c42417-de22-469b-ba1e-11179ecb26a8"),
+                            Name = "Urijah Ali",
+                            coatch = "Cameron Bell",
+                            country = " Burundi",
+                            foundatoinDate = new DateTime(1999, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             logo = "default.jpg"
                         },
                         new
                         {
-                            Id = new Guid("ea153dd8-ee89-4c98-bb6a-6952deae7bd5"),
-                            Name = "Jayden Barajas",
-                            coatch = "Madelynn Tapia",
-                            country = " Somalia1",
-                            foundatoinDate = new DateTime(2029, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("cea8a9ef-ca97-4901-9cbf-84eb88949949"),
+                            Name = "Taniya Hudson",
+                            coatch = "Madden Henson",
+                            country = " Gambia",
+                            foundatoinDate = new DateTime(2013, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             logo = "default.jpg"
                         });
                 });
@@ -770,15 +810,15 @@ namespace League.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "deab2041-3070-4ff9-be07-42ad63798dc4",
-                            ConcurrencyStamp = "bec39e37-d4da-4412-a74a-d714409cb8d6",
+                            Id = "2fe8284b-b2f9-4615-85b9-2db38fbd0ce7",
+                            ConcurrencyStamp = "5a71a0df-6486-4410-993a-939988b8e4f6",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "1106bddf-f117-4c5d-b1e2-356cd9bdd70a",
-                            ConcurrencyStamp = "68fd6261-5437-49b2-b34f-136b30014118",
+                            Id = "94316ed8-e8fd-44dc-9e9a-a14eab919615",
+                            ConcurrencyStamp = "c671014f-8a7a-48e2-a7c3-1aaec1a30f65",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -869,13 +909,18 @@ namespace League.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "a1a6aabf-9f5b-447d-b4ba-377a6fd3843e",
-                            RoleId = "1106bddf-f117-4c5d-b1e2-356cd9bdd70a"
+                            UserId = "6056a156-d00d-49b4-89ed-7a20a67d68e8",
+                            RoleId = "94316ed8-e8fd-44dc-9e9a-a14eab919615"
                         },
                         new
                         {
-                            UserId = "b2e1e05b-e152-4e6b-9fea-a5874e86792d",
-                            RoleId = "deab2041-3070-4ff9-be07-42ad63798dc4"
+                            UserId = "6056a156-d00d-49b4-89ed-7a20a67d68e8",
+                            RoleId = "2fe8284b-b2f9-4615-85b9-2db38fbd0ce7"
+                        },
+                        new
+                        {
+                            UserId = "c8a9a1ae-809d-45e2-bcd6-5a2492df41cd",
+                            RoleId = "2fe8284b-b2f9-4615-85b9-2db38fbd0ce7"
                         });
                 });
 
@@ -898,16 +943,16 @@ namespace League.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domains.Linker.PlayerTeam", b =>
+            modelBuilder.Entity("Domains.Linker.TeamPlayer", b =>
                 {
                     b.HasOne("Domains.Player.Player", null)
-                        .WithOne("team")
-                        .HasForeignKey("Domains.Linker.PlayerTeam", "PlayerId")
+                        .WithOne("Team")
+                        .HasForeignKey("Domains.Linker.TeamPlayer", "PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domains.Team.Team", null)
-                        .WithMany("players")
+                        .WithMany("Players")
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -966,13 +1011,13 @@ namespace League.Migrations
 
             modelBuilder.Entity("Domains.Player.Player", b =>
                 {
-                    b.Navigation("team")
+                    b.Navigation("Team")
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Domains.Team.Team", b =>
                 {
-                    b.Navigation("players");
+                    b.Navigation("Players");
                 });
 #pragma warning restore 612, 618
         }

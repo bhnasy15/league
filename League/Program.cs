@@ -41,6 +41,7 @@ builder.Services.AddTransient<ITeamUnitOfWork, TeamUnitOfWork>();
 builder.Services.AddTransient<IPlayerRepository,PlayerRepository>();
 builder.Services.AddTransient<IPlayerUnitOfWork, PlayerUnitOfWork>();
 
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());

@@ -9575,7 +9575,7 @@
       "Linker >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8",
-      "Microsoft.EntityFrameworkCore >= 6.0.8",
+      "Microsoft.EntityFrameWorkCore >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
@@ -9666,7 +9666,7 @@
             "target": "Package",
             "version": "[6.0.8, )"
           },
-          "Microsoft.EntityFrameworkCore": {
+          "Microsoft.EntityFrameWorkCore": {
             "target": "Package",
             "version": "[6.0.8, )"
           },

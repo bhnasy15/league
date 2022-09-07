@@ -5,9 +5,9 @@
     using Microsoft.EntityFrameworkCore;
 	using Auth;
     using Domains.Player;
-	using Domains.Linker;
     using Domains.Team;
     using System.Reflection;
+    using Domains.Linker;
 
     public class UserIdentityDbContext : IdentityDbContext<User>
     {
@@ -71,7 +71,7 @@
 				    modelBuilder.Entity<Player>().HasData(p);
 					
 					// link player and team
-					modelBuilder.Entity<PlayerTeam>().HasData(new PlayerTeam{ PlayerId = p.Id, TeamId = t.Id});
+					modelBuilder.Entity<TeamPlayer>().HasData(new TeamPlayer {Id = Guid.NewGuid(), PlayerId = p.Id, TeamId = t.Id});
 				}
 
 			}
@@ -125,6 +125,11 @@
                     {
                         UserId = admin.Id,
                         RoleId = adminRole.Id
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        UserId = admin.Id,
+                        RoleId = userRole.Id
                     },
                     new IdentityUserRole<string>
                     {

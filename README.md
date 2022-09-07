@@ -1,10 +1,18 @@
 # dotnet training Task
 
 ## TODO 
-- seeding
-	- linker(playerTeam) is seeded correctly(shows in SqlDb) but still does not appear in ViewModels.
+- --base library--
+- --Domain Driven Design--
+- --Linker--
+- --seeding--
+- Locolization
+- reset password
 - better implementation for Assembly scanning
-- check enhancements
 
 ## notes
 - Version Fallback Warnings are because dotnet was updated.
+
+## Issues
+- linker(TeamPlayer) is seeded correctly(shows in SqlDb) but still does not appear in ViewModels.
+	- TODO
+		- check Common Library for Design Error.

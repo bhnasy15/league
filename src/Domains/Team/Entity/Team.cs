@@ -10,6 +10,6 @@ namespace Domains.Team
         public string coatch { get; set; } = string.Empty;
         public DateTime foundatoinDate { get; set; }
 
-        public ICollection<PlayerTeam> players { get; set; }
+        public ICollection<TeamPlayer> Players { get; set; }
     }
 }

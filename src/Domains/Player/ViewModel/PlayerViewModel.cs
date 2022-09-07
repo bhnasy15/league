@@ -10,6 +10,6 @@
 		public string country { get; set; } = string.Empty;
         public DateTime dob { get; set; }
 
-        public PlayerTeam team { get; set; }
+		public TeamPlayer Team { get; set; }
     }
 }
