@@ -6,8 +6,8 @@ namespace Auth
 
         public string Value { get; private set; }
 
-        public static Passwords User { get { return new Passwords("P@55word"); } }
-        public static Passwords Admin{ get { return new Passwords("P@55word"); } }
+        public static Passwords User { get { return new Passwords("Up@ssw0rd"); } }
+        public static Passwords Admin{ get { return new Passwords("Ap@ssw0rd"); } }
 	}
 }
 

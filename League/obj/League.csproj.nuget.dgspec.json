@@ -32,6 +32,9 @@
               "/home/yarob/dotnet/league/src/Common/Common.csproj": {
                 "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
               },
+              "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+                "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
+              },
               "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
                 "projectPath": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj"
               },
@@ -75,7 +78,7 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.EntityFrameWorkCore": {
               "target": "Package",
               "version": "[6.0.8, )"
             },
@@ -348,6 +351,74 @@
         }
       }
     },
+    "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj",
+        "projectName": "Linker",
+        "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj",
+        "packagesPath": "/home/yarob/.nuget/packages/",
+        "outputPath": "/home/yarob/dotnet/league/src/Domains/Linker/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/yarob/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.8, 6.0.8]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -372,6 +443,9 @@
             "projectReferences": {
               "/home/yarob/dotnet/league/src/Common/Common.csproj": {
                 "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
+              },
+              "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+                "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
               }
             }
           }
@@ -445,8 +519,8 @@
               "/home/yarob/dotnet/league/src/Common/Common.csproj": {
                 "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
               },
-              "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
-                "projectPath": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj"
+              "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+                "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
               }
             }
           }

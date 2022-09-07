@@ -12,18 +12,20 @@ namespace League
             {
                 return new TeamStrings(new List<string>
                 {
-                    "Afghanistan", "Australia", "Bahrain", "Bangladesh",
-                    "Bhutan", "BruneiDarussalam", "Cambodia", "ChinaPR",
-                    "ChineseTaipei", "Guam", "HongKong", "India",
-                    "Indonesia", "IRIran", "Iraq", "Japan",
-                    "Jordan", "KoreaDPR", "KoreaRepublic", "Kuwait",
-                    "KyrgyzRepublic", "Laos", "Lebanon", "Macau",
-                    "Malaysia", "Maldives", "Mongolia", "Myanmar",
-                    "Nepal", "NorthernMarianaIslands", "Oman", "Pakistan",
-                    "Palestine", "Philippines", "Qatar", "SaudiArabia",
-                    "Singapore", "SriLanka", "Syria", "Tajikistan",
-                    "Thailand", "TimorLeste", "Turkmenistan", "UnitedArabEmirates",
-                    "Uzbekistan", "Vietnam", "Yemen"
+					"Nadia Boyer", "Sierra Shaffer", "Kaya Odonnell", "Jayden Barajas",
+					"Messiah Flores", "Geovanni Buck", "Alexis Stuart", "Agustin Arias",
+					"Stella Avila", "Amari Riddle", "Clay Sexton", "Miles Jimenez",
+					"Philip Ramos", "Javion Shaffer", "Rosa Bentley", "Stephanie Berg",
+					"Mckenna Wallace", "Cameron Bell", "Kaylee Guerra", "Mary Powers",
+					"Camille Weaver", "Kaiden Young", "Kaitlyn Roberson", "Urijah Ali",
+					"Jenna Phelps", "Terrence Navarro", "Elias Cummings", "Madelynn Tapia",
+					"Jazmin Schwartz", "Nayeli Hoover", "Chaz Stuart", "Josue Kelly",
+					"America Parrish", "Genevieve Alvarado", "Julius Jacobson",
+					"Taniya Hudson",
+					"Ryland Romero", "Madden Henson", "Brandon Crawford", "Cassie Combs",
+					"Gerardo Spencer", "Norah Torres", "Ronnie Morse", "Francis Garrett",
+					"Ansley Knight", "Laylah Chan", "Donald Frederick", "Tara Singh",
+					"Rachael Rangel", "Bradley Campos",
                 });
             }
         }

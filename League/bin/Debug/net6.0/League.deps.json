@@ -14,6 +14,7 @@
           "Common": "1.0.0",
           "FluentValidation": "11.2.1",
           "FluentValidation.DependencyInjectionExtensions": "11.2.1",
+          "Linker": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.8",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore": "6.0.8",
@@ -1965,10 +1966,20 @@
           "Common.dll": {}
         }
       },
+      "Linker/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.2.1",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
+        },
+        "runtime": {
+          "Linker.dll": {}
+        }
+      },
       "Player/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
           "FluentValidation": "11.2.1",
+          "Linker": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "runtime": {
@@ -1978,8 +1989,8 @@
       "Team/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Player": "1.0.0"
+          "Linker": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "runtime": {
           "Team.dll": {}
@@ -3455,6 +3466,11 @@
       "sha512": ""
     },
     "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Linker/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

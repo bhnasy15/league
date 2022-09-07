@@ -6,8 +6,8 @@ namespace Auth
 
         public string Value { get; private set; }
 
-        public static Emails User { get { return new Emails("user@mail.xyz"); } }
-        public static Emails Admin{ get { return new Emails("admin@mail.xyz"); } }
+        public static Emails User { get { return new Emails("user@mail.com"); } }
+        public static Emails Admin{ get { return new Emails("admin@mail.com"); } }
 	}
 }
 

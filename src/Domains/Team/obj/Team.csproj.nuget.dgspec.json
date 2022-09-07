@@ -104,14 +104,14 @@
         }
       }
     },
-    "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
+    "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj",
-        "projectName": "Player",
-        "projectPath": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj",
+        "projectUniqueName": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj",
+        "projectName": "Linker",
+        "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj",
         "packagesPath": "/home/yarob/.nuget/packages/",
-        "outputPath": "/home/yarob/dotnet/league/src/Domains/Player/obj/",
+        "outputPath": "/home/yarob/dotnet/league/src/Domains/Linker/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/yarob/.nuget/NuGet/NuGet.Config"
@@ -125,11 +125,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "/home/yarob/dotnet/league/src/Common/Common.csproj": {
-                "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -201,8 +197,8 @@
               "/home/yarob/dotnet/league/src/Common/Common.csproj": {
                 "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
               },
-              "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
-                "projectPath": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj"
+              "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+                "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
               }
             }
           }

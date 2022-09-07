@@ -1,5 +1,5 @@
 ﻿using Common;
-using Domains.Player;
+using Domains.Linker;
 
 namespace Domains.Team
 {
@@ -9,6 +9,7 @@ namespace Domains.Team
         public string country { get; set; } = string.Empty;
         public string coatch { get; set; } = string.Empty;
         public DateTime foundatoinDate { get; set; }
-        public ICollection<Player.Player> players { get; set; }
+
+        public ICollection<PlayerTeam> players { get; set; }
     }
 }

@@ -4,20 +4,19 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
 	using Auth;
-    using Microsoft.EntityFrameworkCore.Design;
     using Domains.Player;
+	using Domains.Linker;
     using Domains.Team;
-    using System.Globalization;
+    using System.Reflection;
 
     public class UserIdentityDbContext : IdentityDbContext<User>
     {
-        //private readonly string connectionString;
-        public UserIdentityDbContext(DbContextOptions<UserIdentityDbContext>
-                options) : base(options)
+        protected UserIdentityDbContext()
         {
         }
 
-        protected UserIdentityDbContext()
+        public UserIdentityDbContext(DbContextOptions<UserIdentityDbContext>
+                options) : base(options)
         {
         }
 
@@ -27,11 +26,10 @@
 
 			Random rand = new Random();
 
-			modelBuilder.ApplyConfigurationsFromAssembly(typeof(Player).Assembly);
-			modelBuilder.ApplyConfigurationsFromAssembly(typeof(Team).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(User).Assembly);
-
-			modelBuilder.Entity<Team>().HasMany<Player>(t => t.players);
+			foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+			{
+				modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+			}
 
 			// create 3 teams with their players
 			int t_nameCount = TeamStrings.Names.Value.Count();
@@ -44,31 +42,38 @@
 
 			for (int i = 0; i < 3; i++)
 			{
-				ICollection<Player> _players = new List<Player>{};
 
-				for (int j = 0; j < 11; j++)
-				{
-					Player p = new Player{
-							Id = Guid.NewGuid(),
-							Name = PlayerStrings.Names.Value[rand.Next()%p_nameCount],
-							number = rand.Next()%100,
-							profileImage = PlayerStrings.ProfielImages.Value[rand.Next()%p_prfileCount],
-							country = PlayerStrings.Countries.Value[rand.Next()%p_contryCount],
-							dob = new DateTime(rand.Next()%40+1990, rand.Next()%11+1, rand.Next()%27 +1)
-							};
-				    modelBuilder.Entity<Player>().HasData(p);
-					_players.Add(p);
-				}
-
-			    modelBuilder.Entity<Team>().HasData(new Team{
+				//creat team
+				Team t = new Team{
 					Id = Guid.NewGuid(),
 					Name = TeamStrings.Names.Value[rand.Next()%t_nameCount],
 					logo = TeamStrings.Logoes.Value[rand.Next()%t_logoCount],
 					country = TeamStrings.Countries.Value[rand.Next()%t_contryCount],
 					coatch = TeamStrings.Names.Value[rand.Next()%t_nameCount],
-					//players = _players.ToList(),
-					foundatoinDate = new DateTime(rand.Next()%40+1990, rand.Next()%11+1, rand.Next()%27 +1)
-				});
+					foundatoinDate = new DateTime(rand.Next()%40+1990, rand.Next()%11+1, rand.Next()%27+1)
+				};
+
+				//add team
+			    modelBuilder.Entity<Team>().HasData(t);
+
+				for (int j = 0; j < 11; j++)
+				{
+					//create player
+					Player p = new Player{
+							Id = Guid.NewGuid(),
+							Name = PlayerStrings.Names.Value[rand.Next()%p_nameCount],
+							number = rand.Next()%99+1,
+							profileImage = PlayerStrings.ProfielImages.Value[rand.Next()%p_prfileCount],
+							country = PlayerStrings.Countries.Value[rand.Next()%p_contryCount],
+							dob = new DateTime(rand.Next()%40+1990, rand.Next()%11+1, rand.Next()%27 +1)
+							};
+					//add player
+				    modelBuilder.Entity<Player>().HasData(p);
+					
+					// link player and team
+					modelBuilder.Entity<PlayerTeam>().HasData(new PlayerTeam{ PlayerId = p.Id, TeamId = t.Id});
+				}
+
 			}
 
 			//create sample users

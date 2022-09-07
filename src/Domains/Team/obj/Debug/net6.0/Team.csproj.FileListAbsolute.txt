@@ -13,5 +13,5 @@
 /home/yarob/dotnet/league/src/Domains/Team/obj/Debug/net6.0/Team.dll
 /home/yarob/dotnet/league/src/Domains/Team/obj/Debug/net6.0/ref/Team.dll
 /home/yarob/dotnet/league/src/Domains/Team/obj/Debug/net6.0/Team.pdb
-/home/yarob/dotnet/league/src/Domains/Team/bin/Debug/net6.0/Player.dll
-/home/yarob/dotnet/league/src/Domains/Team/bin/Debug/net6.0/Player.pdb
+/home/yarob/dotnet/league/src/Domains/Team/bin/Debug/net6.0/Linker.dll
+/home/yarob/dotnet/league/src/Domains/Team/bin/Debug/net6.0/Linker.pdb

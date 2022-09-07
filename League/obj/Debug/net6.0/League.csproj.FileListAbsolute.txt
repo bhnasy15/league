@@ -98,3 +98,5 @@
 /home/yarob/dotnet/league/League/bin/Debug/net6.0/EntityFramework.dll
 /home/yarob/dotnet/league/League/bin/Debug/net6.0/Microsoft.AspNet.Identity.Core.dll
 /home/yarob/dotnet/league/League/bin/Debug/net6.0/Microsoft.AspNet.Identity.EntityFramework.dll
+/home/yarob/dotnet/league/League/bin/Debug/net6.0/Linker.dll
+/home/yarob/dotnet/league/League/bin/Debug/net6.0/Linker.pdb

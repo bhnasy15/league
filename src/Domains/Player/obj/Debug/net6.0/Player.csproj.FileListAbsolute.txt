@@ -13,3 +13,5 @@
 /home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.dll
 /home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/ref/Player.dll
 /home/yarob/dotnet/league/src/Domains/Player/obj/Debug/net6.0/Player.pdb
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Linker.dll
+/home/yarob/dotnet/league/src/Domains/Player/bin/Debug/net6.0/Linker.pdb

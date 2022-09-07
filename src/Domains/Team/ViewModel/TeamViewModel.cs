@@ -1,7 +1,7 @@
 ﻿namespace Domains.Team
 {
 	using Common;
-	using Domains.Player;
+	using Domains.Linker;
 
     public class TeamViewModel : BaseEntityViewModel
     {
@@ -9,6 +9,7 @@
 		public string country { get; set; } = string.Empty;
 		public string coatch { get; set; } = string.Empty;
         public DateTime foundatoinDate { get; set; }
-        public ICollection<Player> players { get; set; }
+
+        public ICollection<PlayerTeam> players { get; set; }
     }
 }

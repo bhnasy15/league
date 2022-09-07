@@ -1,0 +1,12 @@
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.csproj.AssemblyReference.cache
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.GeneratedMSBuildEditorConfig.editorconfig
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.AssemblyInfoInputs.cache
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.AssemblyInfo.cs
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.csproj.CoreCompileInputs.cache
+/home/yarob/dotnet/league/src/Domains/Linker/bin/Debug/net6.0/Linker.deps.json
+/home/yarob/dotnet/league/src/Domains/Linker/bin/Debug/net6.0/Linker.dll
+/home/yarob/dotnet/league/src/Domains/Linker/bin/Debug/net6.0/ref/Linker.dll
+/home/yarob/dotnet/league/src/Domains/Linker/bin/Debug/net6.0/Linker.pdb
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.dll
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/ref/Linker.dll
+/home/yarob/dotnet/league/src/Domains/Linker/obj/Debug/net6.0/Linker.pdb

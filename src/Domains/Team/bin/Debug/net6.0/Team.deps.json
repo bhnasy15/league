@@ -9,8 +9,8 @@
       "Team/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Player": "1.0.0"
+          "Linker": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "runtime": {
           "Team.dll": {}
@@ -1813,14 +1813,13 @@
           "Common.dll": {}
         }
       },
-      "Player/1.0.0": {
+      "Linker/1.0.0": {
         "dependencies": {
-          "Common": "1.0.0",
           "FluentValidation": "11.2.1",
           "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "runtime": {
-          "Player.dll": {}
+          "Linker.dll": {}
         }
       }
     }
@@ -3040,7 +3039,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Player/1.0.0": {
+    "Linker/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

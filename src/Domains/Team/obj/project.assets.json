@@ -2624,19 +2624,18 @@
           "bin/placeholder/Common.dll": {}
         }
       },
-      "Player/1.0.0": {
+      "Linker/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Common": "1.0.0",
           "FluentValidation": "11.2.1",
           "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "compile": {
-          "bin/placeholder/Player.dll": {}
+          "bin/placeholder/Linker.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Player.dll": {}
+          "bin/placeholder/Linker.dll": {}
         }
       }
     }
@@ -8065,17 +8064,17 @@
       "path": "../../Common/Common.csproj",
       "msbuildProject": "../../Common/Common.csproj"
     },
-    "Player/1.0.0": {
+    "Linker/1.0.0": {
       "type": "project",
-      "path": "../Player/Player.csproj",
-      "msbuildProject": "../Player/Player.csproj"
+      "path": "../Linker/Linker.csproj",
+      "msbuildProject": "../Linker/Linker.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Common >= 1.0.0",
-      "Microsoft.EntityFrameworkCore >= 6.0.8",
-      "Player >= 1.0.0"
+      "Linker >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 6.0.8"
     ]
   },
   "packageFolders": {
@@ -8106,8 +8105,8 @@
             "/home/yarob/dotnet/league/src/Common/Common.csproj": {
               "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
             },
-            "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
-              "projectPath": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj"
+            "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+              "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
             }
           }
         }

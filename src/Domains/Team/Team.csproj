@@ -2,7 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj" />
-    <ProjectReference Include="..\Player\Player.csproj" />
+    <ProjectReference Include="..\Linker\Linker.csproj" />
   </ItemGroup>
 
   <ItemGroup>

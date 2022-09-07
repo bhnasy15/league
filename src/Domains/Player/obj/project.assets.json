@@ -2623,6 +2623,20 @@
         "runtime": {
           "bin/placeholder/Common.dll": {}
         }
+      },
+      "Linker/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation": "11.2.1",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Linker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Linker.dll": {}
+        }
       }
     }
   },
@@ -8049,12 +8063,18 @@
       "type": "project",
       "path": "../../Common/Common.csproj",
       "msbuildProject": "../../Common/Common.csproj"
+    },
+    "Linker/1.0.0": {
+      "type": "project",
+      "path": "../Linker/Linker.csproj",
+      "msbuildProject": "../Linker/Linker.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Common >= 1.0.0",
       "FluentValidation >= 11.2.1",
+      "Linker >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.8"
     ]
   },
@@ -8085,6 +8105,9 @@
           "projectReferences": {
             "/home/yarob/dotnet/league/src/Common/Common.csproj": {
               "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
+            },
+            "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+              "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
             }
           }
         }

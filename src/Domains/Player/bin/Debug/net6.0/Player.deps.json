@@ -10,6 +10,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "FluentValidation": "11.2.1",
+          "Linker": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "runtime": {
@@ -1812,6 +1813,15 @@
         "runtime": {
           "Common.dll": {}
         }
+      },
+      "Linker/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.2.1",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
+        },
+        "runtime": {
+          "Linker.dll": {}
+        }
       }
     }
   },
@@ -3026,6 +3036,11 @@
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
     "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Linker/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

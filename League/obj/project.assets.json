@@ -3148,12 +3148,27 @@
           "bin/placeholder/Common.dll": {}
         }
       },
+      "Linker/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation": "11.2.1",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Linker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Linker.dll": {}
+        }
+      },
       "Player/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Common": "1.0.0",
           "FluentValidation": "11.2.1",
+          "Linker": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "compile": {
@@ -3168,8 +3183,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Common": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Player": "1.0.0"
+          "Linker": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.8"
         },
         "compile": {
           "bin/placeholder/Team.dll": {}
@@ -9533,6 +9548,11 @@
       "path": "../src/Common/Common.csproj",
       "msbuildProject": "../src/Common/Common.csproj"
     },
+    "Linker/1.0.0": {
+      "type": "project",
+      "path": "../src/Domains/Linker/Linker.csproj",
+      "msbuildProject": "../src/Domains/Linker/Linker.csproj"
+    },
     "Player/1.0.0": {
       "type": "project",
       "path": "../src/Domains/Player/Player.csproj",
@@ -9552,6 +9572,7 @@
       "Common >= 1.0.0",
       "FluentValidation >= 11.2.1",
       "FluentValidation.DependencyInjectionExtensions >= 11.2.1",
+      "Linker >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8",
       "Microsoft.EntityFrameworkCore >= 6.0.8",
@@ -9598,6 +9619,9 @@
             },
             "/home/yarob/dotnet/league/src/Common/Common.csproj": {
               "projectPath": "/home/yarob/dotnet/league/src/Common/Common.csproj"
+            },
+            "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj": {
+              "projectPath": "/home/yarob/dotnet/league/src/Domains/Linker/Linker.csproj"
             },
             "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj": {
               "projectPath": "/home/yarob/dotnet/league/src/Domains/Player/Player.csproj"
