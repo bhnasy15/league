@@ -101,16 +101,16 @@
             {
                 Id = Guid.NewGuid().ToString(),
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
-                Name = Auth.Roles.Admin.Value,
-                NormalizedName = Auth.Roles.Admin.Value.ToUpper()
+                Name = Auth.Roles.User.Value,
+                NormalizedName = Auth.Roles.User.Value.ToUpper()
             };
 
             IdentityRole adminRole = new IdentityRole
             {
                 Id = Guid.NewGuid().ToString(),
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
-                Name = Auth.Roles.User.Value,
-                NormalizedName = Auth.Roles.User.Value.ToUpper()
+                Name = Auth.Roles.Admin.Value,
+                NormalizedName = Auth.Roles.Admin.Value.ToUpper()
             };
 
             user.PasswordHash = new PasswordHasher<User>().HashPassword(user, Passwords.User.Value);
@@ -125,11 +125,6 @@
                     {
                         UserId = admin.Id,
                         RoleId = adminRole.Id
-                    },
-                    new IdentityUserRole<string>
-                    {
-                        UserId = admin.Id,
-                        RoleId = userRole.Id
                     },
                     new IdentityUserRole<string>
                     {

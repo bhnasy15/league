@@ -15,8 +15,9 @@ namespace Auth
             _authentication = authentication;
         }
         [HttpPost("Register")]
-        public async Task<IActionResult> RegisterAsync([FromBody] RegisterationModel model)
+        public async Task<IActionResult> RegisterAsync(string userName, string mail, string password)
         {
+			RegisterationModel model = new RegisterationModel{UserName = userName, Email = mail, Password = password};
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -29,8 +30,9 @@ namespace Auth
         }
 
         [HttpPost("Token")]
-        public async Task<IActionResult> GetTokenAsync([FromBody] TokenRequestModel model)
+        public async Task<IActionResult> GetTokenAsync(string mail, string password)
         {
+			TokenRequestModel model = new TokenRequestModel{Email = mail, Password = password};
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -44,9 +46,9 @@ namespace Auth
 
 		[Authorize]
         [HttpDelete("Unregister")]
-		public async Task<IActionResult> UnregisterAsync([FromBody]
-				TokenRequestModel model)
+		public async Task<IActionResult> UnregisterAsync(string mail, string password)
         {
+			TokenRequestModel model = new TokenRequestModel{Email = mail, Password = password};
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -58,8 +60,9 @@ namespace Auth
 
 		[Authorize(Roles = "Admin")]
         [HttpPost("SetRole")]
-        public async Task<IActionResult> SetRoleAsync([FromBody] SetRoleModel model)
+        public async Task<IActionResult> SetRoleAsync(string mail, string role)
         {
+			SetRoleModel model = new SetRoleModel{Email = mail, RoleName = role};
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -70,5 +73,17 @@ namespace Auth
 
             return Created("registered user", rtn);
         }
+
+		[Authorize(Roles = "Admin")]
+		[HttpPost("GetByEmail")]
+		public IActionResult GetByEmail([FromBody] string mail){
+            return Ok(_authentication.GetByEmail(mail));
+		}
+
+		[Authorize(Roles = "Admin")]
+		[HttpPost("GetUsers")]
+		public IActionResult GetAll(){
+            return Ok(_authentication.GetAll());
+		}
     }
 }

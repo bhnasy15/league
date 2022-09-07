@@ -143,6 +143,16 @@ namespace Auth
 			tmp.Message = "User Unregistered";
 			return tmp;
         }
+
+        public IEnumerable<User> GetAll()
+        {
+			return _userManager.Users;
+        }
+
+        public async Task<User> GetByEmail(string mail)
+        {
+           return await _userManager.FindByEmailAsync(mail);
+        }
     }
 }
 
